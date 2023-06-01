@@ -1,7 +1,6 @@
-! Copyright (C) 2023 Barry Walsh.
+! Copyright (C) 2022-2023 Barry Walsh.
 ! 
-USING:  sequences sorting splitting regexp strings math.parser
-;
+USING: sequences sorting splitting regexp strings math.parser ;
 IN: AdventOfCode.AOC2022.day1
 
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
