@@ -1,33 +1,33 @@
 ! Copyright (C) 2022-2023 Barry Walsh.
 ! 
-USING: sequences sorting splitting regexp strings math.parser ;
+USING: sequences sorting splitting strings math.parser ;
 IN: AdventOfCode.AOC2022.day1
 
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Day1 challenge
 
+CONSTANT: ELF-SEPARATOR "\n\n"
+CONSTANT: CALORIE-SEPRATOR "\n"
 
-: day1-parse ( string -- array ) 
-    ! split data into arrays of numbers (calories)
-    R/ \n\n/ re-split       ! split by \n\n
+! NOTE: 
+!   Originally used R/ n\n/ because "split" allows multiple
+!   separators (for eg.  "\n\r" would split on either \n or \r
+!   whereas split-subseq splits on full sep definition
+
+: day1-parse ( string -- array-of-total-calories-per-elf ) 
+    ELF-SEPARATOR split-subseq
     [ 
-        >string             ! above produces a slice
-        "\n" split  
-        [ string>number ] map 
+        CALORIE-SEPRATOR split  
+        [ dec> ] map-sum
     ] map ;
 
-: sum-group ( array-array-numbers -- array-sum )
-    ! add up array of numbers
-    [ sum ] map ;
-
-: sortN ( array -- sorted-array )
-    natural-sort reverse ;
+: top3-sum ( array -- N )
+    natural-sort reverse
+    3 head sum ;
 
 : day1-part1 ( string -- top-elf-calorie )
-    ! find elf with highest calories
-    day1-parse sum-group sortN first ;
+    day1-parse supremum ;
 
 : day1-part2 ( string -- top3-elves-calories )
-    ! find top 3 elves calories and sum-up
-    day1-parse sum-group sortN 3 head sum ;
+    day1-parse top3-sum ;
 

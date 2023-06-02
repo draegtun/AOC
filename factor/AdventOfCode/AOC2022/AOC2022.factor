@@ -1,7 +1,6 @@
 ! Copyright (C) 2022-2023 Barry Walsh.
 ! 
-USING:  
-        sequences splitting kernel arrays
+USING:  sequences splitting kernel arrays
         io.files io.encodings.ascii vocabs.loader io.backend 
         AdventOfCode.AOC2022.day1
         AdventOfCode.AOC2022.day2
@@ -27,7 +26,7 @@ IN: AdventOfCode.AOC2022
 
 ! for code location see .factor-roots
 
-CONSTANT: input-dir "vocab:AdventOfCode/AOC2022/input-data/"
+CONSTANT: INPUT-DIR "vocab:AdventOfCode/AOC2022/input-data/"
 
 ! Candidate for AdventOfCode.factor module !?
 : slurp-file ( file -- string )
@@ -35,7 +34,7 @@ CONSTANT: input-dir "vocab:AdventOfCode/AOC2022/input-data/"
     ascii file-contents but-last ;
 
 : input-file ( input-filename -- input-filepath )
-    input-dir prepend normalize-path ;
+    INPUT-DIR prepend normalize-path ;
 
 : load-input-file ( dayN.txt -- input-data-string )
     input-file slurp-file ;
