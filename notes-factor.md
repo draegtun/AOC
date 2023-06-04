@@ -28,4 +28,13 @@
 
 	* So removed symlink and instead added code to .factor-roots
 	* refactored AOC2022.factor
-	* And changed to pusing path "vocab:AdventOfCode/..." instead of "work:..."
+	* And changed to using path "vocab:AdventOfCode/..." instead of "work:..."
+
+# Things learnt dueing second refactor
+
+	* `dec>` in-place of `string->number` (just shorter not sure any other difference/benefit)
+	* `map-sum` in-place of `map sum` (more efficient)
+	* `sequence assoc substitute` - changes elemets a sequence using assoc/map/lookup
+		- where assoc is (or can be)  { { this => to-this } { ... } }
+	* `"A" first` returns ascii/unicode code of first char in string:  => 65
+	

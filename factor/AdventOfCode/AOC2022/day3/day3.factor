@@ -11,14 +11,9 @@ IN: AdventOfCode.AOC2022.day3
 : split-in-half ( string -- array ) 
     dup length 2 / group ;
 
-: ascii-code> ( char -- ascii-code )
-    ! "first" returns the ascii (unicode) number on first
-    ! char of string.  Kept as separator word for reminder!
-    first ; inline
-
 : letter>code ( letter -- score )
     ! score a-z -> 1-26  AND  A-Z -> 27-52
-    dup ascii-code> swap    ! stack -> 97 "a"
+    dup first swap    ! stack -> 97 "a"
     lower? [ 96 ] [ 38 ] if - ;
 
 : day3 ( string -- sum ) 
