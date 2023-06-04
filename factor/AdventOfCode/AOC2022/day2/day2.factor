@@ -14,7 +14,7 @@ CONSTANT: ANSWER-SCORE {
     "X" => 1 "Y" => 2 "Z" => 3
 }
 
-: day2-score-move ( players-move -- just-player2-score )
+: score-move ( players-move -- just-player2-score )
     dup last swap   ! player2 move score
     {
         { { 1 1 } [ 3 ] }  ! 3 draws
@@ -26,13 +26,13 @@ CONSTANT: ANSWER-SCORE {
         [ drop 0 ]         ! 1st player wins all other games
     } case + ;
 
-: day2-parse ( string -- players-moves )
+: parse-day2 ( string -- players-moves )
     string-lines [ 
         " " split ANSWER-SCORE substitute
     ] map ;
 
 : day2 ( input-string -- score )
-    day2-parse [ day2-score-move ] map-sum ;
+    parse-day2 [ score-move ] map-sum ;
 
 
 ! need to convert players move for part2
@@ -42,9 +42,9 @@ CONSTANT: RECODE {
     { 1 3 } => { 1 2 }  { 3 3 } => { 3 1 }  ! 3 (Z) - win
 }
 
-: day2-recode ( players-moves -- new-players-moves )
+: recode-day2 ( players-moves -- new-players-moves )
     RECODE substitute ;
 
 : day2-part2 ( input-string -- score )
-    day2-parse day2-recode [ day2-score-move ] map-sum ;
+    parse-day2 recode-day2 [ score-move ] map-sum ;
 

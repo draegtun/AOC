@@ -14,7 +14,7 @@ CONSTANT: CALORIE-SEPRATOR "\n"
 !   separators (for eg.  "\n\r" would split on either \n or \r
 !   whereas split-subseq splits on full sep definition
 
-: day1-parse ( string -- array-of-total-calories-per-elf ) 
+: parse-day1 ( string -- array-of-total-calories-per-elf ) 
     ELF-SEPARATOR split-subseq
     [ 
         CALORIE-SEPRATOR split  
@@ -26,8 +26,8 @@ CONSTANT: CALORIE-SEPRATOR "\n"
     3 head sum ;
 
 : day1-part1 ( string -- top-elf-calorie )
-    day1-parse supremum ;
+    parse-day1 supremum ;
 
 : day1-part2 ( string -- top3-elves-calories )
-    day1-parse top3-sum ;
+    parse-day1 top3-sum ;
 

@@ -19,7 +19,7 @@ IN: AdventOfCode.AOC2022.tests
 [ 2616 ] [ "day3.txt" load-input-file day3-part2 ] unit-test
 
 [ 576 ] [ "day4.txt" load-input-file day4 ] unit-test
-[ 905 ] [ "day4.txt" load-input-file day4#2 ] unit-test
+[ 905 ] [ "day4.txt" load-input-file day4-part2 ] unit-test
 
 [ "CFFHVVHNC" ] [ "day5.txt" load-input-file day5 ] unit-test
 [ "FSZWBPTBG" ] [ "day5.txt" load-input-file day5#2 ] unit-test

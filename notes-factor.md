@@ -37,4 +37,4 @@
 	* `sequence assoc substitute` - changes elemets a sequence using assoc/map/lookup
 		- where assoc is (or can be)  { { this => to-this } { ... } }
 	* `"A" first` returns ascii/unicode code of first char in string:  => 65
-	
+	* `sift` removed all `false` elements from a sequence	

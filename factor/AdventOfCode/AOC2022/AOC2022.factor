@@ -1,5 +1,6 @@
 ! Copyright (C) 2022-2023 Barry Walsh.
 ! 
+
 USING:  sequences splitting kernel arrays
         io.files io.encodings.ascii vocabs.loader io.backend 
         AdventOfCode.AOC2022.day1

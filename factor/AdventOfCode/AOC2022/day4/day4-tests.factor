@@ -1,8 +1,8 @@
 ! Copyright (C) 2023 Barry Walsh.
 
-USING: tools.test AdventOfCode.AOC2022
-    AdventOfCode.AOC2022.day4
-    ;
+USING:  tools.test AdventOfCode.AOC2022
+        AdventOfCode.AOC2022.day4 ;
+
 IN: AdventOfCode.AOC2022.day4.tests
 
 CONSTANT: example-data
@@ -15,4 +15,4 @@ CONSTANT: example-data
 
 
 [ 2 ] [ example-data day4 ] unit-test
-[ 4 ] [ example-data day4#2 ] unit-test
+[ 4 ] [ example-data day4-part2 ] unit-test
