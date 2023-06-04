@@ -1,9 +1,8 @@
 ! Copyright (C) 2023 Barry Walsh.
 ! 
 USING:  kernel sequences math grouping splitting
-        io.encodings.ascii.private unicode sets
-       
-;
+        io.encodings.ascii.private unicode sets ;
+
 IN: AdventOfCode.AOC2022.day3
 
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -13,10 +12,9 @@ IN: AdventOfCode.AOC2022.day3
     dup length 2 / group ;
 
 : ascii-code> ( char -- ascii-code )
-    ! Convert char (single char string) to its ASCII code
-    ! convert to byte-array then get first number (ascii-code)
-    ! might be better way?
-    ascii> first ;        
+    ! "first" returns the ascii (unicode) number on first
+    ! char of string.  Kept as separator word for reminder!
+    first ; inline
 
 : letter>code ( letter -- score )
     ! score a-z -> 1-26  AND  A-Z -> 27-52
@@ -26,11 +24,10 @@ IN: AdventOfCode.AOC2022.day3
 : day3 ( string -- sum ) 
     string-lines [
         split-in-half intersection letter>code
-    ] map sum ;
-
+    ] map-sum ;
 
 : day3-part2 ( string -- array ) 
     string-lines 3 group [ 
         intersection letter>code 
-    ] map sum ;
+    ] map-sum ;
 
