@@ -1,7 +1,7 @@
 ! Copyright (C) 2023 Barry Walsh.
 ! 
 USING:  sequences kernel combinators math splitting 
-        match arrays pair-rocket assocs ;
+        arrays pair-rocket assocs ;
 
 IN: AdventOfCode.AOC2022.day2
 
@@ -9,7 +9,7 @@ IN: AdventOfCode.AOC2022.day2
 ! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Day2 challenge
 
-CONSTANT: ANSWER-CODE {
+CONSTANT: ANSWER-SCORE {
     "A" => 1 "B" => 2 "C" => 3
     "X" => 1 "Y" => 2 "Z" => 3
 }
@@ -28,7 +28,7 @@ CONSTANT: ANSWER-CODE {
 
 : day2-parse ( string -- players-moves )
     string-lines [ 
-        " " split ANSWER-CODE substitute
+        " " split ANSWER-SCORE substitute
     ] map ;
 
 : day2 ( input-string -- score )
