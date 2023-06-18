@@ -1,12 +1,12 @@
-! Copyright (C) 2022 Barry Walsh.
-! See http://factorcode.org/license.txt for BSD license.
+! Copyright (C) 2022-2023 Barry Walsh.
+
 USING: tools.test AdventOfCode.AOC2022
     AdventOfCode.AOC2022.day1
     AdventOfCode.AOC2022.day2
     AdventOfCode.AOC2022.day3
     AdventOfCode.AOC2022.day4
-    AdventOfCode.AOC2022.day5
-     ;
+    AdventOfCode.AOC2022.day5 ;
+
 IN: AdventOfCode.AOC2022.tests
 
 [ 69281 ] [ "day1.txt" load-input-file day1-part1 ] unit-test
@@ -22,5 +22,5 @@ IN: AdventOfCode.AOC2022.tests
 [ 905 ] [ "day4.txt" load-input-file day4-part2 ] unit-test
 
 [ "CFFHVVHNC" ] [ "day5.txt" load-input-file day5 ] unit-test
-[ "FSZWBPTBG" ] [ "day5.txt" load-input-file day5#2 ] unit-test
+[ "FSZWBPTBG" ] [ "day5.txt" load-input-file day5-part2 ] unit-test
 

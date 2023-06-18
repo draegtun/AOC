@@ -1,8 +1,8 @@
 ! Copyright (C) 2023 Barry Walsh.
 
-USING: tools.test AdventOfCode.AOC2022
-    AdventOfCode.AOC2022.day5
-    ;
+USING:  tools.test AdventOfCode.AOC2022
+        AdventOfCode.AOC2022.day5 ;
+
 IN: AdventOfCode.AOC2022.day5.tests
 
 CONSTANT: example-data
@@ -18,5 +18,5 @@ move 1 from 1 to 2"
 
 
 [ "CMZ" ] [ example-data day5 ] unit-test
-[ "MCD" ] [ example-data day5#2 ] unit-test
+[ "MCD" ] [ example-data day5-part2 ] unit-test
 

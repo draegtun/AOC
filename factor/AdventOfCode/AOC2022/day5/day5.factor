@@ -1,9 +1,9 @@
 ! Copyright (C) 2023 Barry Walsh.
-! 
+
 USING:  kernel math accessors sequences locals grouping
         ascii sbufs regexp arrays math.parser splitting
-        strings
-;
+        strings ;
+
 IN: AdventOfCode.AOC2022.day5
 
 
@@ -149,7 +149,7 @@ C: <crates> crates
     parse1-day5 parse2-day5
     run-commands-day5 answer-day5 ;
 
-: day5#2 ( input-string -- answer-string )
+: day5-part2 ( input-string -- answer-string )
     parse1-day5 parse2-day5
     run-commands-day5#2 answer-day5 ;
 
